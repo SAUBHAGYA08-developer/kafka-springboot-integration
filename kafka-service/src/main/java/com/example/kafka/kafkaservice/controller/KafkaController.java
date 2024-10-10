@@ -14,26 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.kafka.kafkaservice.service.KafkaAdminService;
 import com.example.kafka.kafkaservice.service.ProducerService;
 
-@RestController
-public class KafkaController {
-
-	@Autowired
-	private KafkaAdminService kafkaAdminService;
-
-	@Autowired
-	private ProducerService producerService;
-	
-	/*
+/*
 	 * if is there any issue email on 
 	 * en21ca501161@medicaps.ac.in
 	 * ssaubhagya2129@gmail.com
-  	 * linkedIn : https://www.linkedin.com/in/saubhagya08/
-	 * 
+  	 * linkedIn : https://www.linkedin.com/in/saubhagya08/ 
 	 * Project: Kafka Implementation using Spring Boot
 	 * Description: Created a Kafka implementation using Java 8 and Spring Boot 2.3.10.RELEASE, 
 	 * utilizing binding to integrate Kafka with Spring Boot. This project enables 
 	 * seamless message production and consumption using Kafka topics, 
 	 * leveraging Spring Boot's auto-configuration and binding capabilities.
+         * Reference : https://kafka.apache.org/
 		
 		====>>> Key Technologies <<<====
 		> Kafka
@@ -43,8 +34,46 @@ public class KafkaController {
 		> Kafka topic production and consumption
 		> Spring Boot auto-configuration and binding for Kafka
 		> Message handling and processing using Kafka
-	 */
 
+   		====>>> About Kafka <<<====
+     		Here's a brief description of Kafka and its uses:
+		What is Apache Kafka?
+		Apache Kafka is an open-source, distributed streaming platform designed for high-throughput and fault-tolerant data processing. 
+		It enables real-time data integration, processing, and analytics.
+		Key Features:
+		Publish-Subscribe Model: Producers publish messages to topics, and consumers subscribe to topics to receive messages.
+		Distributed Architecture: Scalable, fault-tolerant, and highly available.
+		High-Performance: Handles massive data volumes with low latency.
+		Data Durability: Messages are persistent and replayable.
+		Why Use Kafka?
+		Real-Time Data Integration: Unify data from multiple sources.
+		Event-Driven Architecture: Enable microservices communication.
+		Streaming Analytics: Process and analyze data in real time.
+		Log Aggregation: Centralize log collection and processing.
+		IoT Data Processing: Handle high-volume sensor data.
+		Common Use Cases:
+		Data Pipelining: LinkedIn, Uber
+		Real-Time Analytics: Netflix, Spotify
+		Log Processing: Twitter, Airbnb
+		IoT Applications: Industrial automation, Smart cities
+		Kafka's versatility and scalability make it popular for various industries and applications.
+
+		Managed Services for Running Kafka in Live Applications: Top Options for Learning
+		Discover reliable and scalable solutions for integrating Kafka into your live applications with these popular managed services:
+		Confluent Cloud:  https://www.confluent.io/confluent-cloud/
+		Amazon Web Services (AWS) Managed Streaming for Kafka (MSK): https://aws.amazon.com/msk/
+		DigitalOcean Managed Databases for Kafka: https://www.digitalocean.com/products/managed-databases-kafka
+		These services offer streamlined Kafka deployment, management, and scaling for seamless integration into your live applications.
+	 */
+@RestController
+public class KafkaController {
+
+	@Autowired
+	private KafkaAdminService kafkaAdminService;
+
+	@Autowired
+	private ProducerService producerService;
+	
 	@PostMapping("/publishMessage")
 	public void publishMessage(@RequestParam String topic, @RequestBody String message,
 			@RequestParam(value = "key", required = false) String key) {
