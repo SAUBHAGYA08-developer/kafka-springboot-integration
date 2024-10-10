@@ -1,0 +1,26 @@
+spring:
+  kafka:
+    bootstrap-servers: # server url
+    properties:
+      sasl:
+        mechanism: PLAIN
+        jaas:
+          config: #key value of username & password
+      security:
+        protocol: SASL_SSL
+      schema:
+        registry:
+          url: # url
+          basic:
+            auth:
+              credentials:
+                source: USER_INFO
+              user:
+                info: #Info key
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: test-topic # also create your own topic 
+          group: test-topic-group
+          
