@@ -27,6 +27,7 @@ public class KafkaController {
 	 * if is there any issue email on 
 	 * en21ca501161@medicaps.ac.in
 	 * ssaubhagya2129@gmail.com
+  	 * linkedIn : https://www.linkedin.com/in/saubhagya08/
 	 * 
 	 * Project: Kafka Implementation using Spring Boot
 	 * Description: Created a Kafka implementation using Java 8 and Spring Boot 2.3.10.RELEASE, 
